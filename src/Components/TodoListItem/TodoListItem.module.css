@@ -1,0 +1,40 @@
+.todoListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
+  border-radius: 6px;
+  background-color: white;
+  padding: 1rem;
+  transition: all 0.25s ease-out;
+}
+.todoListItem:hover {
+  transform: scale(1.1);
+}
+.todoText {
+}
+.icons {
+  border-left: 3px solid black;
+  padding-left: 1rem;
+  font-size: 2rem;
+  width: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.editIcon,
+.deleteIcon {
+  cursor: pointer;
+  transition: all 0.1s ease-out;
+}
+.editIcon:hover,
+.deleteIcon:hover {
+  transform: scale(1.1);
+}
+.editIcon:hover {
+  color: orange;
+}
+.deleteIcon:hover {
+  color: red;
+}

@@ -1,0 +1,16 @@
+.todoContainer {
+  max-width: 600px;
+  width: 90%;
+
+  position: relative;
+  top: 5vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+  .todoContainer {
+    top: 15vw !important;
+  }
+}
