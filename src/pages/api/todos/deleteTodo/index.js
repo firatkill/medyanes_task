@@ -1,4 +1,5 @@
 import { deleteTodo } from "@/prisma/todo";
+import { deleteDataByAny } from "@/services/serviceOperations";
 
 export default async function handler(req, res) {
   if (!req) {
@@ -7,7 +8,7 @@ export default async function handler(req, res) {
   if (req.method === "DELETE") {
     try {
       const { id } = req.query;
-      await deleteTodo(id);
+      await deleteDataByAny("todo", { id: id });
 
       return res.status(200).json({ message: "Todo başarıyla silindi." });
     } catch (error) {

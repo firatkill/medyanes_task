@@ -1,4 +1,5 @@
 import { putTodo } from "@/prisma/todo";
+import { updateDataByAny } from "@/services/serviceOperations";
 
 const handler = async (req, res) => {
   if (!req) {
@@ -7,14 +8,14 @@ const handler = async (req, res) => {
   if (req.method === "PUT") {
     try {
       const data = req.body;
-
       if (!data.todoName || !data.todoDescription || !data) {
         throw new Error(
           "Girdiğiniz bilgilerde hata var. Lütfen kontrol ediniz."
         );
       }
-
-      const todo = putTodo(data);
+      // idsiz gönderiyoruz
+      const { id, ...todoToUpdate } = data;
+      const todo = updateDataByAny("todo", { id: data.id }, todoToUpdate);
 
       return res.status(200).json({
         success: true,

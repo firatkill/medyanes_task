@@ -1,3 +1,5 @@
+import { createNewData } from "@/services/serviceOperations";
+
 const { postTodo } = require("@/prisma/todo");
 
 const handler = async (req, res) => {
@@ -14,7 +16,7 @@ const handler = async (req, res) => {
         );
       }
 
-      const todo = postTodo(data);
+      const todo = createNewData("todo", data);
 
       return res.status(200).json({
         success: true,
