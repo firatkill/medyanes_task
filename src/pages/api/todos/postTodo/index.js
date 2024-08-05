@@ -1,7 +1,5 @@
 import { createNewData } from "@/services/serviceOperations";
 
-const { postTodo } = require("@/prisma/todo");
-
 const handler = async (req, res) => {
   if (!req) {
     return res.status(500).json({ error: "İstek bulunamadı." });
